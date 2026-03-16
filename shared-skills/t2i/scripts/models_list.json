@@ -1,0 +1,30 @@
+{
+  "update_time": "2026-02-28 18:34:27",
+  "default_index": 1,
+  "models": [
+    {
+      "model_id": "Tongyi-MAI/Z-Image-Turbo",
+      "name": "Z-Image-Turbo",
+      "last_updated": 1769824155,
+      "downloads": 335652,
+      "stars": 1673,
+      "index": 1
+    },
+    {
+      "model_id": "Tongyi-MAI/Z-Image",
+      "name": "Z-Image",
+      "last_updated": 1769610405,
+      "downloads": 67431,
+      "stars": 234,
+      "index": 2
+    },
+    {
+      "model_id": "Qwen/Qwen-Image-2512",
+      "name": "Qwen-Image-2512",
+      "last_updated": 1767175036,
+      "downloads": 72178,
+      "stars": 312,
+      "index": 3
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "date": "2026-03-10",
+  "models": {
+    "Tongyi-MAI/Z-Image-Turbo": 2
+  },
+  "total": 2,
+  "config": {
+    "API_KEY": "ms-e9df1fa1-c961-4132-89d9-5d515d660b6f",
+    "DEFAULT_MODEL": "Tongyi-MAI/Z-Image-Turbo",
+    "BASE_URL": "https://api-inference.modelscope.cn/"
+  },
+  "output_dir": "assets"
+}

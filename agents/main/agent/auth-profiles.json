@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "profiles": {
+    "minimax-cn:default": {
+      "type": "api_key",
+      "provider": "minimax-cn",
+      "key": "sk-cp-GifFM_LiLkRGx6GfxsEl2hvdkRO1Oumzzo16nFpmZKyF6rH7Wv5j5t1BF-ZBA2_GHsRF9lCd0ZtP5nS4rZ-SMlayHH9sTkiVc46VrFHQfJThwS5tEONY2As"
+    }
+  },
+  "usageStats": {
+    "minimax-cn:default": {
+      "errorCount": 0,
+      "lastUsed": 1773639095043
+    }
+  }
+}

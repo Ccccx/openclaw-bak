@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "MiniMax": {
+      "command": "minimax-mcp-js",
+      "env": {
+        "MINIMAX_API_KEY": "sk-cp-8I-y0iNgSwdc8Pwe9mxmp0BtxzXHe0gUatEBBzCARdT8M4MGPQBCZhE5tGpmFrzBlhLGSr8A2B4UH2Wjk3lZ5vgammDMEWZaqikam6XPkmTYhhPgnhd0yHk",
+        "MINIMAX_API_HOST": "https://api.minimaxi.com"
+      }
+    }
+  },
+  "imports": []
+}

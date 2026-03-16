@@ -1,0 +1,29 @@
+{
+  "providers": {
+    "minimax-cn": {
+      "baseUrl": "https://api.minimaxi.com/anthropic",
+      "api": "anthropic-messages",
+      "authHeader": true,
+      "models": [
+        {
+          "id": "MiniMax-M2.5",
+          "name": "MiniMax M2.5",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0.3,
+            "output": 1.2,
+            "cacheRead": 0.03,
+            "cacheWrite": 0.12
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192,
+          "api": "anthropic-messages"
+        }
+      ],
+      "apiKey": "sk-cp-GifFM_LiLkRGx6GfxsEl2hvdkRO1Oumzzo16nFpmZKyF6rH7Wv5j5t1BF-ZBA2_GHsRF9lCd0ZtP5nS4rZ-SMlayHH9sTkiVc46VrFHQfJThwS5tEONY2As"
+    }
+  }
+}

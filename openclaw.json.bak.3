@@ -1,0 +1,179 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.3.11",
+    "lastTouchedAt": "2026-03-16T04:12:26.833Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-03-15T16:07:04.998Z",
+    "lastRunVersion": "2026.3.11",
+    "lastRunCommand": "onboard",
+    "lastRunMode": "local"
+  },
+  "auth": {
+    "profiles": {
+      "minimax-cn:default": {
+        "provider": "minimax-cn",
+        "mode": "api_key"
+      }
+    }
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "minimax-cn": {
+        "baseUrl": "https://api.minimaxi.com/anthropic",
+        "api": "anthropic-messages",
+        "authHeader": true,
+        "models": [
+          {
+            "id": "MiniMax-M2.5",
+            "name": "MiniMax M2.5",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0.3,
+              "output": 1.2,
+              "cacheRead": 0.03,
+              "cacheWrite": 0.12
+            },
+            "contextWindow": 200000,
+            "maxTokens": 8192
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "minimax-cn/MiniMax-M2.5-highspeed"
+      },
+      "models": {
+        "minimax-cn/MiniMax-M2.5": {
+          "alias": "Minimax"
+        },
+        "minimax-cn/MiniMax-M2.5-highspeed": {}
+      },
+      "workspace": "/home/admin/.openclaw/workspace",
+      "compaction": {
+        "mode": "safeguard"
+      }
+    }
+  },
+  "tools": {
+    "profile": "coding"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "hooks": {
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "boot-md": {
+          "enabled": true
+        },
+        "bootstrap-extra-files": {
+          "enabled": true
+        },
+        "session-memory": {
+          "enabled": true
+        }
+      }
+    }
+  },
+  "channels": {
+    "feishu": {
+      "enabled": true,
+      "appId": "cli_a93a5bdf09625cd2",
+      "appSecret": "jpTytLKpHDapaF0nt7gTpgOCi11kLeAr",
+      "domain": "feishu",
+      "connectionMode": "websocket",
+      "requireMention": true,
+      "dmPolicy": "allowlist",
+      "groupPolicy": "open",
+      "allowFrom": [
+        "ou_edad1a9e5a6b404482a53140669d52b1"
+      ],
+      "groupAllowFrom": [],
+      "streaming": true
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "lan",
+    "controlUi": {
+      "enabled": false,
+      "basePath": "a654cb7f",
+      "dangerouslyAllowHostHeaderOriginFallback": true,
+      "allowInsecureAuth": true,
+      "dangerouslyDisableDeviceAuth": true
+    },
+    "auth": {
+      "mode": "token",
+      "token": "0159aff39a5578b4cc957e685844c0db260c6650d51a5e3f"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "nodes": {
+      "denyCommands": [
+        "camera.snap",
+        "camera.clip",
+        "screen.record",
+        "contacts.add",
+        "calendar.add",
+        "reminders.add",
+        "sms.send"
+      ]
+    }
+  },
+  "skills": {
+    "load": {
+      "extraDirs": [
+        "/home/admin/.openclaw/shared-skills"
+      ]
+    },
+    "install": {
+      "nodeManager": "pnpm"
+    }
+  },
+  "plugins": {
+    "allow": [
+      "openclaw-lark"
+    ],
+    "entries": {
+      "feishu": {
+        "enabled": false
+      },
+      "openclaw-lark": {
+        "enabled": true
+      }
+    },
+    "installs": {
+      "openclaw-lark": {
+        "source": "npm",
+        "spec": "@larksuite/openclaw-lark",
+        "installPath": "/home/admin/.openclaw/extensions/openclaw-lark",
+        "version": "2026.3.15",
+        "resolvedName": "@larksuite/openclaw-lark",
+        "resolvedVersion": "2026.3.15",
+        "resolvedSpec": "@larksuite/openclaw-lark@2026.3.15",
+        "integrity": "sha512-YGk63CgYG+YDUO2+TxdSPJZA6km52OpqAqf26vZHMUqawEKhiT4bcfD5JHh6VGazjUwRk5Bze1UyVKncc0csBA==",
+        "shasum": "997cb8ee9cf66dcd3a24477cb5f59f5fb1a57fff",
+        "resolvedAt": "2026-03-16T03:50:04.125Z",
+        "installedAt": "2026-03-16T03:50:19.747Z"
+      }
+    }
+  }
+}
