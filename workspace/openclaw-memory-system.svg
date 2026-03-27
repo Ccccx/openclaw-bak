@@ -1,0 +1,270 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="memGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="memGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0f3460;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#533483;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="longTermGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd93d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f39c12;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="dailyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0097e6;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="vectorGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e94560;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c0392b;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="memGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <style>
+      @keyframes pulse {
+        0%, 100% { opacity: 0.7; }
+        50% { opacity: 1; }
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-5px); }
+      }
+      @keyframes dash {
+        to { stroke-dashoffset: -20; }
+      }
+      @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      @keyframes searchPulse {
+        0%, 100% { stroke-width: 2; }
+        50% { stroke-width: 4; }
+      }
+      @keyframes flowRight {
+        0% { opacity: 0; transform: translateX(-20px); }
+        50% { opacity: 1; }
+        100% { opacity: 0; transform: translateX(20px); }
+      }
+      @keyframes flowDown {
+        0% { opacity: 0; transform: translateY(-10px); }
+        50% { opacity: 1; }
+        100% { opacity: 0; transform: translateY(30px); }
+      }
+      .pulse-anim { animation: pulse 2s ease-in-out infinite; }
+      .float-anim { animation: float 3s ease-in-out infinite; }
+      .dash-anim { animation: dash 1s linear infinite; }
+      .spin-anim { animation: spin 4s linear infinite; }
+      .search-anim { animation: searchPulse 1.5s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="700" fill="url(#memGrad1)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" font-family="Arial, sans-serif" font-size="28" fill="#fff" text-anchor="middle" font-weight="bold">
+    🧠 OpenClaw 记忆系统
+  </text>
+  <text x="450" y="65" font-family="Arial, sans-serif" font-size="14" fill="#aaa" text-anchor="middle">
+    Memory System with Hybrid Search
+  </text>
+
+  <!-- ==================== LEFT SIDE: Memory Sources ==================== -->
+  
+  <!-- Long-term Memory -->
+  <g transform="translate(50, 120)">
+    <rect x="0" y="0" width="200" height="140" rx="15" fill="#1e272e" stroke="url(#longTermGrad)" stroke-width="3"/>
+    <text x="100" y="30" font-family="Arial" font-size="16" fill="#ffd93d" text-anchor="middle" font-weight="bold">📝 MEMORY.md</text>
+    <text x="100" y="50" font-family="Arial" font-size="10" fill="#888" text-anchor="middle">长期记忆</text>
+    <text x="100" y="70" font-family="Arial" font-size="9" fill="#666" text-anchor="middle">• 决策与偏好</text>
+    <text x="100" y="85" font-family="Arial" font-size="9" fill="#666" text-anchor="middle">• 重要事实</text>
+    <text x="100" y="100" font-family="Arial" font-size="9" fill="#666" text-anchor="middle">• 持久信息</text>
+    
+    <!-- Only loaded in main session badge -->
+    <rect x="50" y="115" width="100" height="18" rx="9" fill="#2d3436"/>
+    <text x="100" y="128" font-family="Arial" font-size="8" fill="#e94560" text-anchor="middle">仅主会话加载</text>
+  </g>
+
+  <!-- Daily Logs -->
+  <g transform="translate(50, 280)">
+    <rect x="0" y="0" width="200" height="180" rx="15" fill="#1e272e" stroke="url(#dailyGrad)" stroke-width="3"/>
+    <text x="100" y="30" font-family="Arial" font-size="16" fill="#00d9ff" text-anchor="middle" font-weight="bold">📁 memory/</text>
+    <text x="100" y="50" font-family="Arial" font-size="10" fill="#888" text-anchor="middle">每日日志</text>
+    
+    <!-- Daily file examples -->
+    <g class="float-anim" style="animation-delay: 0s">
+      <rect x="20" y="65" width="160" height="25" rx="5" fill="#2d3436"/>
+      <text x="30" y="82" font-family="Arial" font-size="10" fill="#00d9ff">📄 2026-03-17.md</text>
+    </g>
+    <g class="float-anim" style="animation-delay: 0.3s">
+      <rect x="20" y="95" width="160" height="25" rx="5" fill="#2d3436"/>
+      <text x="30" y="112" font-family="Arial" font-size="10" fill="#00d9ff">📄 2026-03-16.md</text>
+    </g>
+    <g class="float-anim" style="animation-delay: 0.6s">
+      <rect x="20" y="125" width="160" height="25" rx="5" fill="#2d3436"/>
+      <text x="30" y="142" font-family="Arial" font-size="10" fill="#00d9ff">📄 2026-03-15.md</text>
+    </g>
+  </g>
+
+  <!-- Session Transcripts -->
+  <g transform="translate(50, 480)">
+    <rect x="0" y="0" width="200" height="80" rx="15" fill="#1e272e" stroke="#6c5ce7" stroke-width="2"/>
+    <text x="100" y="25" font-family="Arial" font-size="14" fill="#6c5ce7" text-anchor="middle" font-weight="bold">💬 会话记录</text>
+    <text x="100" y="45" font-family="Arial" font-size="9" fill="#888" text-anchor="middle">Session Transcripts</text>
+    <text x="100" y="62" font-family="Arial" font-size="9" fill="#666" text-anchor="middle">JSONL 格式存储</text>
+  </g>
+
+  <!-- ==================== CENTER: Search Engine ==================== -->
+  
+  <!-- Hybrid Search Engine -->
+  <g transform="translate(320, 200)">
+    <rect x="0" y="0" width="260" height="280" rx="20" fill="url(#memGrad2)" stroke="#e94560" stroke-width="3" filter="url(#memGlow)"/>
+    <text x="130" y="35" font-family="Arial" font-size="18" fill="#fff" text-anchor="middle" font-weight="bold">🔍 混合搜索引擎</text>
+    <text x="130" y="55" font-family="Arial" font-size="10" fill="#aaa" text-anchor="middle">Hybrid Search Engine</text>
+    
+    <!-- Vector Search -->
+    <g transform="translate(20, 75)">
+      <rect x="0" y="0" width="100" height="60" rx="10" fill="#1e272e" stroke="#e94560" stroke-width="2" class="search-anim"/>
+      <text x="50" y="22" font-family="Arial" font-size="11" fill="#e94560" text-anchor="middle" font-weight="bold">Vector</text>
+      <text x="50" y="40" font-family="Arial" font-size="9" fill="#888" text-anchor="middle">语义相似度</text>
+      <text x="50" y="52" font-family="Arial" font-size="8" fill="#666" text-anchor="middle">cosine similarity</text>
+    </g>
+    
+    <!-- BM25 Search -->
+    <g transform="translate(140, 75)">
+      <rect x="0" y="0" width="100" height="60" rx="10" fill="#1e272e" stroke="#00ff88" stroke-width="2" class="search-anim"/>
+      <text x="50" y="22" font-family="Arial" font-size="11" fill="#00ff88" text-anchor="middle" font-weight="bold">BM25</text>
+      <text x="50" y="40" font-family="Arial" font-size="9" fill="#888" text-anchor="middle">关键词匹配</text>
+      <text x="50" y="52" font-family="Arial" font-size="8" fill="#666" text-anchor="middle">full-text search</text>
+    </g>
+    
+    <!-- Score Merging -->
+    <g transform="translate(80, 150)">
+      <rect x="0" y="0" width="100" height="35" rx="18" fill="#0f3460" stroke="#ffd93d" stroke-width="2"/>
+      <text x="50" y="22" font-family="Arial" font-size="10" fill="#ffd93d" text-anchor="middle" class="pulse-anim">⚖️ 分数加权</text>
+    </g>
+    
+    <!-- MMR & Temporal -->
+    <g transform="translate(30, 200)">
+      <rect x="0" y="0" width="90" height="50" rx="8" fill="#1e272e" stroke="#a55eea" stroke-width="2"/>
+      <text x="45" y="18" font-family="Arial" font-size="9" fill="#a55eea" text-anchor="middle" font-weight="bold">MMR</text>
+      <text x="45" y="35" font-family="Arial" font-size="8" fill="#888" text-anchor="middle">多样性重排</text>
+    </g>
+    
+    <g transform="translate(140, 200)">
+      <rect x="0" y="0" width="90" height="50" rx="8" fill="#1e272e" stroke="#00d9ff" stroke-width="2"/>
+      <text x="45" y="18" font-family="Arial" font-size="9" fill="#00d9ff" text-anchor="middle" font-weight="bold">⏰ Temporal</text>
+      <text x="45" y="35" font-family="Arial" font-size="8" fill="#888" text-anchor="middle">时间衰减</text>
+    </g>
+  </g>
+
+  <!-- ==================== RIGHT: Output ==================== -->
+  
+  <!-- Memory Tools -->
+  <g transform="translate(650, 200)">
+    <rect x="0" y="0" width="200" height="200" rx="15" fill="#1e272e" stroke="#00d9ff" stroke-width="2"/>
+    <text x="100" y="30" font-family="Arial" font-size="16" fill="#00d9ff" text-anchor="middle" font-weight="bold">🔧 记忆工具</text>
+    
+    <!-- memory_search -->
+    <g transform="translate(20, 50)">
+      <rect x="0" y="0" width="160" height="50" rx="10" fill="#2d3436" stroke="#ffd93d" stroke-width="2"/>
+      <text x="80" y="20" font-family="Arial" font-size="11" fill="#ffd93d" text-anchor="middle" font-weight="bold">memory_search</text>
+      <text x="80" y="38" font-family="Arial" font-size="9" fill="#888" text-anchor="middle">语义搜索 → snippets</text>
+    </g>
+    
+    <!-- memory_get -->
+    <g transform="translate(20, 110)">
+      <rect x="0" y="0" width="160" height="50" rx="10" fill="#2d3436" stroke="#00ff88" stroke-width="2"/>
+      <text x="80" y="20" font-family="Arial" font-size="11" fill="#00ff88" text-anchor="middle" font-weight="bold">memory_get</text>
+      <text x="80" y="38" font-family="Arial" font-size="9" fill="#888" text-anchor="middle">精准读取 → 原文</text>
+    </g>
+  </g>
+
+  <!-- Data Flow Lines -->
+  
+  <!-- Memory files to search engine -->
+  <path d="M 250 170 Q 280 170 320 230" stroke="#ffd93d" stroke-width="2" fill="none" stroke-dasharray="5,5" class="dash-anim"/>
+  <path d="M 250 340 Q 280 340 320 280" stroke="#00d9ff" stroke-width="2" fill="none" stroke-dasharray="5,5" class="dash-anim"/>
+  <path d="M 250 520 Q 300 520 350 400" stroke="#6c5ce7" stroke-width="2" fill="none" stroke-dasharray="5,5" class="dash-anim"/>
+  
+  <!-- Search to tools -->
+  <path d="M 580 340 Q 620 340 650 300" stroke="#ffd93d" stroke-width="2" fill="none" stroke-dasharray="5,5" class="dash-anim"/>
+  
+  <!-- Animated data packets -->
+  <circle r="5" fill="#ffd93d" filter="url(#memGlow)">
+    <animateMotion dur="2s" repeatCount="indefinite" path="M 250 170 Q 280 170 320 230"/>
+    <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  
+  <circle r="5" fill="#00d9ff" filter="url(#memGlow)">
+    <animateMotion dur="2.5s" repeatCount="indefinite" path="M 250 340 Q 280 340 320 280"/>
+    <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- ==================== BOTTOM: Storage Backend ==================== -->
+  
+  <!-- Storage Options -->
+  <g transform="translate(320, 520)">
+    <rect x="0" y="0" width="260" height="80" rx="15" fill="#1e272e" stroke="#636e72" stroke-width="2"/>
+    <text x="130" y="25" font-family="Arial" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">💾 存储后端</text>
+    
+    <g transform="translate(20, 40)">
+      <rect x="0" y="0" width="100" height="30" rx="5" fill="#2d3436" stroke="#00d9ff" stroke-width="2"/>
+      <text x="50" y="20" font-family="Arial" font-size="10" fill="#00d9ff" text-anchor="middle">SQLite (默认)</text>
+    </g>
+    <g transform="translate(140, 40)">
+      <rect x="0" y="0" width="100" height="30" rx="5" fill="#2d3436" stroke="#a55eea" stroke-width="2"/>
+      <text x="50" y="20" font-family="Arial" font-size="10" fill="#a55eea" text-anchor="middle">QMD (实验)</text>
+    </g>
+  </g>
+
+  <!-- Provider Options -->
+  <g transform="translate(50, 600)">
+    <rect x="0" y="0" width="200" height="50" rx="10" fill="#1e272e" stroke="#e94560" stroke-width="2"/>
+    <text x="100" y="18" font-family="Arial" font-size="11" fill="#e94560" text-anchor="middle" font-weight="bold">Embedding Providers</text>
+    <text x="100" y="35" font-family="Arial" font-size="8" fill="#888" text-anchor="middle">OpenAI · Gemini · Voyage · Mistral · Ollama</text>
+  </g>
+
+  <!-- Compaction Trigger -->
+  <g transform="translate(320, 610)">
+    <rect x="0" y="0" width="260" height="50" rx="10" fill="#0f3460" stroke="#ff6b6b" stroke-width="2"/>
+    <text x="130" y="18" font-family="Arial" font-size="11" fill="#ff6b6b" text-anchor="middle" font-weight="bold">⚡ 自动记忆刷新</text>
+    <text x="130" y="35" font-family="Arial" font-size="9" fill="#888" text-anchor="middle">Compaction 前触发，发送 NO_REPLY</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(650, 450)">
+    <text x="0" y="0" font-family="Arial" font-size="12" fill="#888" font-weight="bold">图例:</text>
+    <circle cx="10" cy="20" r="5" fill="#ffd93d"/>
+    <text x="25" y="24" font-family="Arial" font-size="10" fill="#aaa">长期记忆</text>
+    <circle cx="10" cy="40" r="5" fill="#00d9ff"/>
+    <text x="25" y="44" font-family="Arial" font-size="10" fill="#aaa">每日日志</text>
+    <circle cx="10" cy="60" r="5" fill="#e94560"/>
+    <text x="25" y="64" font-family="Arial" font-size="10" fill="#aaa">向量搜索</text>
+    <circle cx="10" cy="80" r="5" fill="#00ff88"/>
+    <text x="25" y="84" font-family="Arial" font-size="10" fill="#aaa">关键词搜索</text>
+  </g>
+
+  <!-- Flow animation indicators -->
+  <g transform="translate(280, 260)">
+    <text font-family="Arial" font-size="10" fill="#888">→</text>
+  </g>
+  <g transform="translate(580, 280)">
+    <text font-family="Arial" font-size="10" fill="#888">→</text>
+  </g>
+</svg>

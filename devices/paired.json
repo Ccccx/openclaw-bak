@@ -4,14 +4,17 @@
     "publicKey": "e6m9zLAK8sKVvcTcLxP-BZt-sQQ1tj6s0w7EEJMyprg",
     "platform": "linux",
     "clientId": "cli",
-    "clientMode": "probe",
+    "clientMode": "cli",
     "role": "operator",
     "roles": [
       "operator"
     ],
     "scopes": [
       "operator.read",
-      "operator.admin"
+      "operator.admin",
+      "operator.write",
+      "operator.approvals",
+      "operator.pairing"
     ],
     "approvedScopes": [
       "operator.read",

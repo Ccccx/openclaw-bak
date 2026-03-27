@@ -1,0 +1,259 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700">
+  <defs>
+    <!-- Glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Gradient definitions -->
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0f3460;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#533483;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e94560;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f3460;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00ff88;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="gradGateway" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b35;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f7c59f;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Animated dash pattern -->
+    <style>
+      @keyframes dash {
+        to { stroke-dashoffset: -20; }
+      }
+      @keyframes pulse {
+        0%, 100% { opacity: 0.6; }
+        50% { opacity: 1; }
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-5px); }
+      }
+      @keyframes rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      @keyframes dataFlow {
+        0% { opacity: 0; stroke-dashoffset: 100; }
+        50% { opacity: 1; }
+        100% { opacity: 0; stroke-dashoffset: 0; }
+      }
+      @keyframes glowPulse {
+        0%, 100% { filter: drop-shadow(0 0 5px #00d9ff); }
+        50% { filter: drop-shadow(0 0 15px #00d9ff); }
+      }
+      .animated { animation: float 3s ease-in-out infinite; }
+      .pulse-anim { animation: pulse 2s ease-in-out infinite; }
+      .dash-anim { animation: dash 1s linear infinite; }
+      .glow-anim { animation: glowPulse 2s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="700" fill="url(#grad1)"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" font-family="Arial, sans-serif" font-size="28" fill="#fff" text-anchor="middle" font-weight="bold">
+    🦞 OpenClaw 架构模式
+  </text>
+  <text x="450" y="65" font-family="Arial, sans-serif" font-size="14" fill="#aaa" text-anchor="middle">
+    Gateway Architecture with Dynamic Data Flow
+  </text>
+
+  <!-- Chat Apps Layer -->
+  <g transform="translate(50, 100)">
+    <rect x="0" y="0" width="150" height="200" rx="15" fill="#2d3436" stroke="#636e72" stroke-width="2"/>
+    <text x="75" y="30" font-family="Arial, sans-serif" font-size="16" fill="#fff" text-anchor="middle" font-weight="bold">Chat Apps</text>
+    
+    <!-- App icons with animations -->
+    <g class="animated" style="animation-delay: 0s">
+      <rect x="20" y="50" width="30" height="30" rx="8" fill="#25D366"/>
+      <text x="35" y="70" font-size="18" text-anchor="middle">📱</text>
+      <text x="65" y="65" font-family="Arial" font-size="10" fill="#fff">WhatsApp</text>
+    </g>
+    <g class="animated" style="animation-delay: 0.3s">
+      <rect x="20" y="90" width="30" height="30" rx="8" fill="#0088cc"/>
+      <text x="35" y="110" font-size="18" text-anchor="middle">✈️</text>
+      <text x="65" y="105" font-family="Arial" font-size="10" fill="#fff">Telegram</text>
+    </g>
+    <g class="animated" style="animation-delay: 0.6s">
+      <rect x="20" y="130" width="30" height="30" rx="8" fill="#5865F2"/>
+      <text x="35" y="150" font-size="18" text-anchor="middle">💬</text>
+      <text x="65" y="145" font-family="Arial" font-size="10" fill="#fff">Discord</text>
+    </g>
+    <g class="animated" style="animation-delay: 0.9s">
+      <rect x="20" y="170" width="30" height="30" rx="8" fill="#000"/>
+      <text x="35" y="190" font-size="18" text-anchor="middle">🍎</text>
+      <text x="65" y="185" font-family="Arial" font-size="10" fill="#fff">iMessage</text>
+    </g>
+  </g>
+
+  <!-- Gateway Core -->
+  <g transform="translate(300, 120)">
+    <rect x="0" y="0" width="300" height="340" rx="20" fill="url(#grad2)" stroke="#e94560" stroke-width="3" filter="url(#glow)"/>
+    <text x="150" y="35" font-family="Arial, sans-serif" font-size="22" fill="#fff" text-anchor="middle" font-weight="bold">🦞 Gateway</text>
+    <text x="150" y="55" font-family="Arial, sans-serif" font-size="11" fill="#aaa" text-anchor="middle">The Single Source of Truth</text>
+    
+    <!-- Gateway Components -->
+    <!-- Message Router -->
+    <g transform="translate(20, 75)">
+      <rect x="0" y="0" width="120" height="50" rx="10" fill="#1e272e" stroke="#00d9ff" stroke-width="2"/>
+      <text x="60" y="20" font-family="Arial" font-size="11" fill="#00d9ff" text-anchor="middle" font-weight="bold">🔀 Message Router</text>
+      <text x="60" y="38" font-family="Arial" font-size="9" fill="#888" text-anchor="middle">Protocol Translation</text>
+    </g>
+    
+    <!-- Session Manager -->
+    <g transform="translate(160, 75)">
+      <rect x="0" y="0" width="120" height="50" rx="10" fill="#1e272e" stroke="#00ff88" stroke-width="2"/>
+      <text x="60" y="20" font-family="Arial" font-size="11" fill="#00ff88" text-anchor="middle" font-weight="bold">💾 Session Manager</text>
+      <text x="60" y="38" font-family="Arial" font-size="9" fill="#888" text-anchor="middle">State &amp; Context</text>
+    </g>
+    
+    <!-- Memory System -->
+    <g transform="translate(20, 140)">
+      <rect x="0" y="0" width="120" height="50" rx="10" fill="#1e272e" stroke="#ffd93d" stroke-width="2"/>
+      <text x="60" y="20" font-family="Arial" font-size="11" fill="#ffd93d" text-anchor="middle" font-weight="bold">🧠 Memory System</text>
+      <text x="60" y="38" font-family="Arial" font-size="9" fill="#888" text-anchor="middle">Search &amp; Storage</text>
+    </g>
+    
+    <!-- Plugin System -->
+    <g transform="translate(160, 140)">
+      <rect x="0" y="0" width="120" height="50" rx="10" fill="#1e272e" stroke="#a55eea" stroke-width="2"/>
+      <text x="60" y="20" font-family="Arial" font-size="11" fill="#a55eea" text-anchor="middle" font-weight="bold">🔌 Plugin System</text>
+      <text x="60" y="38" font-family="Arial" font-size="9" fill="#888" text-anchor="middle">Extensions</text>
+    </g>
+    
+    <!-- Auth & Security -->
+    <g transform="translate(20, 205)">
+      <rect x="0" y="0" width="120" height="50" rx="10" fill="#1e272e" stroke="#ff6b6b" stroke-width="2"/>
+      <text x="60" y="20" font-family="Arial" font-size="11" fill="#ff6b6b" text-anchor="middle" font-weight="bold">🔐 Auth &amp; Security</text>
+      <text x="60" y="38" font-family="Arial" font-size="9" fill="#888" text-anchor="middle">Device Pairing</text>
+    </g>
+    
+    <!-- Provider Connections -->
+    <g transform="translate(160, 205)">
+      <rect x="0" y="0" width="120" height="50" rx="10" fill="#1e272e" stroke="#6c5ce7" stroke-width="2"/>
+      <text x="60" y="20" font-family="Arial" font-size="11" fill="#6c5ce7" text-anchor="middle" font-weight="bold">🔗 Provider Conn.</text>
+      <text x="60" y="38" font-family="Arial" font-size="9" fill="#888" text-anchor="middle">AI Models</text>
+    </g>
+    
+    <!-- Event Bus -->
+    <g transform="translate(90, 270)">
+      <rect x="0" y="0" width="120" height="40" rx="20" fill="#0f3460" stroke="#e94560" stroke-width="2"/>
+      <text x="60" y="25" font-family="Arial" font-size="11" fill="#fff" text-anchor="middle" class="pulse-anim">⚡ Event Bus</text>
+    </g>
+  </g>
+
+  <!-- Client Layer -->
+  <g transform="translate(700, 100)">
+    <rect x="0" y="0" width="150" height="200" rx="15" fill="#2d3436" stroke="#636e72" stroke-width="2"/>
+    <text x="75" y="30" font-family="Arial, sans-serif" font-size="16" fill="#fff" text-anchor="middle" font-weight="bold">Clients</text>
+    
+    <g class="animated" style="animation-delay: 0.2s">
+      <rect x="20" y="50" width="110" height="35" rx="8" fill="#1e272e" stroke="#00d9ff"/>
+      <text x="75" y="72" font-family="Arial" font-size="12" fill="#00d9ff" text-anchor="middle">💻 CLI</text>
+    </g>
+    <g class="animated" style="animation-delay: 0.4s">
+      <rect x="20" y="95" width="110" height="35" rx="8" fill="#1e272e" stroke="#00ff88"/>
+      <text x="75" y="117" font-family="Arial" font-size="12" fill="#00ff88" text-anchor="middle">🌐 Web UI</text>
+    </g>
+    <g class="animated" style="animation-delay: 0.6s">
+      <rect x="20" y="140" width="110" height="35" rx="8" fill="#1e272e" stroke="#a55eea"/>
+      <text x="75" y="162" font-family="Arial" font-size="12" fill="#a55eea" text-anchor="middle">📱 Nodes</text>
+    </g>
+  </g>
+
+  <!-- Data Flow Lines (Animated) -->
+  <!-- Chat to Gateway -->
+  <path d="M 200 200 Q 250 200 300 220" stroke="#00d9ff" stroke-width="3" fill="none" stroke-dasharray="8,4" class="dash-anim"/>
+  
+  <!-- Gateway to Clients -->
+  <path d="M 600 220 Q 650 200 700 200" stroke="#00ff88" stroke-width="3" fill="none" stroke-dasharray="8,4" class="dash-anim"/>
+  
+  <!-- Data packet animation -->
+  <circle r="6" fill="#00d9ff" filter="url(#glow)">
+    <animateMotion dur="2s" repeatCount="indefinite" path="M 200 200 Q 250 200 300 220"/>
+    <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  
+  <circle r="6" fill="#00ff88" filter="url(#glow)">
+    <animateMotion dur="2.5s" repeatCount="indefinite" path="M 600 220 Q 650 200 700 200"/>
+    <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- AI Provider -->
+  <g transform="translate(350, 500)">
+    <rect x="0" y="0" width="200" height="80" rx="15" fill="url(#grad3)" stroke="#fff" stroke-width="2"/>
+    <text x="100" y="25" font-family="Arial" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">🤖 AI Provider</text>
+    <text x="100" y="45" font-family="Arial" font-size="10" fill="#ddd" text-anchor="middle">OpenAI / Anthropic / Google</text>
+    <text x="100" y="62" font-family="Arial" font-size="10" fill="#aaa" text-anchor="middle">Local Models / Ollama</text>
+    
+    <!-- Connection line -->
+    <path d="M 100 -20 L 100 -30" stroke="#e94560" stroke-width="2" fill="none" class="dash-anim"/>
+  </g>
+
+  <!-- Workspace -->
+  <g transform="translate(50, 500)">
+    <rect x="0" y="0" width="180" height="120" rx="15" fill="#1e272e" stroke="#ffd93d" stroke-width="2"/>
+    <text x="90" y="25" font-family="Arial" font-size="14" fill="#ffd93d" text-anchor="middle" font-weight="bold">📁 Workspace</text>
+    <text x="90" y="45" font-family="Arial" font-size="9" fill="#888" text-anchor="middle">~/.openclaw/workspace/</text>
+    
+    <!-- File icons -->
+    <g transform="translate(15, 60)">
+      <text x="0" y="0" font-size="12">📝 MEMORY.md</text>
+    </g>
+    <g transform="translate(15, 80)">
+      <text x="0" y="0" font-size="12">📁 memory/</text>
+    </g>
+    <g transform="translate(15, 100)">
+      <text x="0" y="0" font-size="12">📄 AGENTS.md</text>
+    </g>
+  </g>
+
+  <!-- Connection from Gateway to Workspace -->
+  <path d="M 300 460 Q 200 460 150 500" stroke="#ffd93d" stroke-width="2" fill="none" stroke-dasharray="5,5" class="dash-anim"/>
+  
+  <!-- Connection from Gateway to AI -->
+  <path d="M 450 340 Q 450 420 450 480" stroke="#e94560" stroke-width="2" fill="none" stroke-dasharray="5,5" class="dash-anim"/>
+  
+  <!-- Data packets to AI -->
+  <circle r="4" fill="#e94560">
+    <animateMotion dur="1.5s" repeatCount="indefinite" path="M 450 340 Q 450 420 450 480"/>
+    <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Legend -->
+  <g transform="translate(650, 520)">
+    <text x="0" y="0" font-family="Arial" font-size="12" fill="#888" font-weight="bold">Legend:</text>
+    <circle cx="10" cy="20" r="5" fill="#00d9ff"/>
+    <text x="25" y="24" font-family="Arial" font-size="10" fill="#aaa">Inbound</text>
+    <circle cx="10" cy="40" r="5" fill="#00ff88"/>
+    <text x="25" y="44" font-family="Arial" font-size="10" fill="#aaa">Outbound</text>
+    <circle cx="10" cy="60" r="5" fill="#e94560"/>
+    <text x="25" y="64" font-family="Arial" font-size="10" fill="#aaa">AI Request</text>
+  </g>
+
+  <!-- Dynamic Flow Indicators -->
+  <g class="glow-anim" transform="translate(250, 300)">
+    <text x="0" y="0" font-family="Arial" font-size="11" fill="#00d9ff">→ Data Flow →</text>
+  </g>
+</svg>

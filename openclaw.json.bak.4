@@ -1,12 +1,12 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.11",
-    "lastTouchedAt": "2026-03-16T03:50:22.546Z"
+    "lastTouchedAt": "2026-03-27T02:59:41.302Z"
   },
   "wizard": {
-    "lastRunAt": "2026-03-15T16:07:04.998Z",
+    "lastRunAt": "2026-03-23T03:06:36.653Z",
     "lastRunVersion": "2026.3.11",
-    "lastRunCommand": "onboard",
+    "lastRunCommand": "configure",
     "lastRunMode": "local"
   },
   "auth": {
@@ -57,6 +57,28 @@
         "minimax-cn/MiniMax-M2.5-highspeed": {}
       },
       "workspace": "/home/admin/.openclaw/workspace",
+      "memorySearch": {
+        "sources": [
+          "memory",
+          "sessions"
+        ],
+        "experimental": {
+          "sessionMemory": true
+        },
+        "provider": "gemini",
+        "remote": {
+          "apiKey": "AIzaSyBNl_nhLjhPyfOWE7w6ylKfw83K1x0G_bk"
+        },
+        "fallback": "gemini",
+        "model": "gemini-embedding-001",
+        "query": {
+          "hybrid": {
+            "enabled": true,
+            "vectorWeight": 0.7,
+            "textWeight": 0.3
+          }
+        }
+      },
       "compaction": {
         "mode": "safeguard"
       }
@@ -90,17 +112,39 @@
       }
     }
   },
+  "channels": {
+    "feishu": {
+      "enabled": true,
+      "appId": "cli_a93a5bdf09625cd2",
+      "appSecret": "jpTytLKpHDapaF0nt7gTpgOCi11kLeAr",
+      "domain": "feishu",
+      "connectionMode": "websocket",
+      "requireMention": true,
+      "dmPolicy": "allowlist",
+      "groupPolicy": "open",
+      "allowFrom": [
+        "ou_b3b3dc776df60982741679029db666e9"
+      ],
+      "groupAllowFrom": [],
+      "streaming": true,
+      "footer": {
+        "elapsed": true,
+        "status": true
+      },
+      "threadSession": true
+    }
+  },
   "gateway": {
     "port": 18789,
     "mode": "local",
     "bind": "lan",
-        "controlUi": {
-		      "enabled": false,
-		            "basePath": "a654cb7f",
-			          "dangerouslyAllowHostHeaderOriginFallback": true,
-				        "allowInsecureAuth": true,
-					      "dangerouslyDisableDeviceAuth": true
-	},
+    "controlUi": {
+      "enabled": true,
+      "basePath": "a654cb7f",
+      "dangerouslyAllowHostHeaderOriginFallback": true,
+      "allowInsecureAuth": true,
+      "dangerouslyDisableDeviceAuth": true
+    },
     "auth": {
       "mode": "token",
       "token": "0159aff39a5578b4cc957e685844c0db260c6650d51a5e3f"
@@ -122,57 +166,21 @@
     }
   },
   "skills": {
-	  "load": {
-		        "extraDirs": [
-				        "/home/admin/.openclaw/shared-skills"
-					      ]
-					          },
+    "load": {
+      "extraDirs": [
+        "/home/admin/.openclaw/shared-skills"
+      ]
+    },
     "install": {
       "nodeManager": "pnpm"
     }
   },
   "plugins": {
+    "allow": [],
     "entries": {
       "feishu": {
         "enabled": false
-      },
-      "openclaw-lark": {
-        "enabled": true
       }
-    },
-    "installs": {
-      "openclaw-lark": {
-        "source": "npm",
-        "spec": "@larksuite/openclaw-lark",
-        "installPath": "/home/admin/.openclaw/extensions/openclaw-lark",
-        "version": "2026.3.15",
-        "resolvedName": "@larksuite/openclaw-lark",
-        "resolvedVersion": "2026.3.15",
-        "resolvedSpec": "@larksuite/openclaw-lark@2026.3.15",
-        "integrity": "sha512-YGk63CgYG+YDUO2+TxdSPJZA6km52OpqAqf26vZHMUqawEKhiT4bcfD5JHh6VGazjUwRk5Bze1UyVKncc0csBA==",
-        "shasum": "997cb8ee9cf66dcd3a24477cb5f59f5fb1a57fff",
-        "resolvedAt": "2026-03-16T03:50:04.125Z",
-        "installedAt": "2026-03-16T03:50:19.747Z"
-      }
-    },
-    "allow": [
-      "openclaw-lark"
-    ]
-  },
-  "channels": {
-    "feishu": {
-      "enabled": true,
-      "appId": "cli_a93a5bdf09625cd2",
-      "appSecret": "jpTytLKpHDapaF0nt7gTpgOCi11kLeAr",
-      "domain": "feishu",
-      "connectionMode": "websocket",
-      "requireMention": true,
-      "dmPolicy": "allowlist",
-      "groupPolicy": "open",
-      "allowFrom": [
-        "ou_edad1a9e5a6b404482a53140669d52b1"
-      ],
-      "groupAllowFrom": []
     }
   }
 }
