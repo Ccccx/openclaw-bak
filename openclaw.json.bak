@@ -1,13 +1,16 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.11",
-    "lastTouchedAt": "2026-03-27T04:17:53.925Z"
+    "lastTouchedAt": "2026-03-27T04:31:55.157Z"
   },
   "wizard": {
-    "lastRunAt": "2026-03-27T04:17:53.889Z",
+    "lastRunAt": "2026-03-27T04:20:30.203Z",
     "lastRunVersion": "2026.3.11",
     "lastRunCommand": "configure",
     "lastRunMode": "local"
+  },
+  "update": {
+    "checkOnStart": false
   },
   "auth": {
     "profiles": {
@@ -183,8 +186,8 @@
       "dangerouslyDisableDeviceAuth": true
     },
     "auth": {
-      "mode": "password",
-      "password": "chengjinzhou.CX0"
+      "mode": "token",
+      "token": "113332239140655cad38e7cb6c486992bae42cd43341c575"
     },
     "tailscale": {
       "mode": "off",

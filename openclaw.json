@@ -1,13 +1,16 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.11",
-    "lastTouchedAt": "2026-03-27T04:20:30.237Z"
+    "lastTouchedAt": "2026-03-27T05:14:29.229Z"
   },
   "wizard": {
-    "lastRunAt": "2026-03-27T04:20:30.203Z",
+    "lastRunAt": "2026-03-27T05:14:29.196Z",
     "lastRunVersion": "2026.3.11",
     "lastRunCommand": "configure",
     "lastRunMode": "local"
+  },
+  "update": {
+    "checkOnStart": false
   },
   "auth": {
     "profiles": {

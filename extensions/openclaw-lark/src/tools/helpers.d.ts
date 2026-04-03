@@ -155,7 +155,7 @@ export declare function checkToolRegistration(api: OpenClawPluginApi, toolName: 
  * registerTool(api, { name: 'feishu_my_tool', ... });
  * ```
  */
-export declare function registerTool(api: OpenClawPluginApi, tool: Parameters<OpenClawPluginApi['registerTool']>[0], opts?: Parameters<OpenClawPluginApi['registerTool']>[1]): void;
+export declare function registerTool(api: OpenClawPluginApi, tool: Parameters<OpenClawPluginApi['registerTool']>[0], opts?: Parameters<OpenClawPluginApi['registerTool']>[1]): boolean;
 /**
  * 格式化工具返回值为 OpenClaw 期望的格式
  *
