@@ -8,7 +8,7 @@
       "name": "GitHub日榜每日调研",
       "enabled": true,
       "createdAtMs": 1774583146323,
-      "updatedAtMs": 1775066752875,
+      "updatedAtMs": 1777226729780,
       "schedule": {
         "expr": "0 2 * * *",
         "kind": "cron",
@@ -27,15 +27,15 @@
         "mode": "announce"
       },
       "state": {
-        "nextRunAtMs": 1775152800000,
-        "lastRunAtMs": 1775066400006,
+        "nextRunAtMs": 1777312800000,
+        "lastRunAtMs": 1777226400007,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 352869,
+        "lastDurationMs": 329773,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "runningAtMs": 1775152800004
+        "runningAtMs": 1777312800002
       }
     }
   ]
